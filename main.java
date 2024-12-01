@@ -87,4 +87,65 @@ public class main {
         public abstract Rectangle find(double x, double y);
         public abstract void dump(String indent);
     }
+
+    /**
+     * Represents an internal node that can have a child one
+     */
+    class InternalNode extends Node {
+        private Node[] children;
+
+        public InternalNode(double x, double y) {
+            super(x, y, 100, 100);
+            this.children = new Node[4];
+
+            // Initialize child nodes
+            for (int i = 0; i < children.length; i++) {
+                children[i] = new LeafNode(calculateChildX(i), calculateChildY(i), width / 2, height / 2);
+            }
+        }
+
+        // Calculate child coordinates
+        private double calculateChildX(int index) {
+            switch (index) {
+                case 0: return x + width / 2;
+                case 1: return x - width / 2;
+                case 2: return x + width / 2;
+                case 3: return x - width / 2;
+                default: return x;
+            }
+        }
+
+        private double calculateChildY(int index) {
+            switch (index) {
+                case 0: return y + height / 2;
+                case 1: return y + height / 2;
+                case 2: return y - height / 2;
+                case 3: return y - height / 2;
+                default: return y;
+            }
+        }
+
+        @Override
+        public boolean insert(Rectangle rectangle) {
+            // Insert 
+            return true; // Replace
+        }
+
+        @Override
+        public boolean delete(double x, double y) {
+            // Delete 
+            return true; // Replace 
+        }
+
+        @Override
+        public Rectangle find(double x, double y) {
+            // Find 
+            return null; // Replace 
+        }
+
+        @Override
+        public void dump(String indent) {
+            // Dump 
+        }
+    }
 }
