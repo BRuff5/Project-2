@@ -57,4 +57,34 @@ public class main {
         }
     }
 
+
+    /**
+     * Dumps 
+     */
+    public void dump() {
+        root.dump("");
+    }
+
+    /**
+     * Abstract 
+     */
+    abstract class Node {
+        protected double x, y; // Bottom-left 
+        protected double width, height; // Size 
+        protected List<Rectangle> rectangles; // Rectangles contained 
+
+        public Node(double x, double y, double width, double height) {
+            this.x = x;
+            this.y = y;
+            this.width = width;
+            this.height = height;
+            this.rectangles = new ArrayList<>();
+        }
+
+        // Abstract methods for child classes
+        public abstract boolean insert(Rectangle rectangle);
+        public abstract boolean delete(double x, double y);
+        public abstract Rectangle find(double x, double y);
+        public abstract void dump(String indent);
+    }
 }
