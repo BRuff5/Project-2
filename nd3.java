@@ -3,8 +3,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import org.w3c.dom.Node;
-
 /**
  * A Quadtree data structure 
  * that allows for the insertion, deletion, 
@@ -12,13 +10,13 @@ import org.w3c.dom.Node;
  * in a 2D space.
  */
 
-public class main {
+public class nd3 {
     private Node root;
 
     /**
      * Defines the initial bounds.
      */
-    public main() {
+    public nd3() {
         this.root = new LeafNode(-50, -50, 100, 100);
     }
     /**
@@ -195,13 +193,25 @@ public class main {
             this.width = width;
         }
 
-        // Getters to print infor
+        // Get print info
         @Override
         public String toString() {
             return String.format("Rectangle at (%.2f, %.2f): %.2fx%.2f", x, y, length, width);
         }
     }
+
+    /**
+     * Main method for the entry point.
+     * @param args command-line arguments containing the file path for commands
+     */
+    public static void main(String[] args) {
+        if (args.length < 1) {
+            System.out.println("Please provide a command file.");
+            return;
+        }
+        nd3 quadtree = new nd3();
+        quadtree.processCommands(args[0]);
+    }
 }
 
-
-    //hi
+//sup :)
