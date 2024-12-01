@@ -148,4 +148,36 @@ public class main {
             // Dump 
         }
     }
+
+    /**
+     * Represents a leaf node contains rectangles
+     */
+    class LeafNode extends Node {
+        public LeafNode(double x, double y, double width, double height) {
+            super(x, y, width, height);
+        }
+
+        @Override
+        public boolean insert(Rectangle rectangle) {
+            // Insert 
+            return true; // Replace 
+        }
+
+        @Override
+        public boolean delete(double x, double y) {
+            // Delete 
+            return true; // Replace 
+        }
+
+        @Override
+        public Rectangle find(double x, double y) {
+            // Find 
+            return null; // Replace 
+        }
+
+        @Override
+        public void dump(String indent) {
+            // Dump 
+        }
+    }
 }
