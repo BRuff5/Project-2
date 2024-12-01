@@ -180,4 +180,28 @@ public class main {
             // Dump 
         }
     }
+
+    /**
+     * Rectangle position and dimensions.
+     */
+    class Rectangle {
+        private double x, y; // Bottom-left corner
+        private double length, width;
+
+        public Rectangle(double x, double y, double length, double width) {
+            this.x = x;
+            this.y = y;
+            this.length = length;
+            this.width = width;
+        }
+
+        // Getters to print infor
+        @Override
+        public String toString() {
+            return String.format("Rectangle at (%.2f, %.2f): %.2fx%.2f", x, y, length, width);
+        }
+    }
 }
+
+
+    //hi
